@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using MiddysProducts.Data.Data;
 using MiddysProducts.Data.Repositories;
 using MiddysProducts.Services;
+using MiddysProducts.Services.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,7 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 
 // AutoMapper
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(typeof(ProductProfile));
 
 // Controllers & Swagger
 builder.Services.AddControllers();
