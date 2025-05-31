@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media screen and (max-width: 1024px), print {
+    .header-bottom {
+        padding: 12px 0;
+    }
+}
+
+@media screen and (max-width: 1099px), print {
+    .header-bottom {
+        padding: 12px 0;
+    }
+}
+
+footer {
+    position: relative;
+    background: #464343;
+    color: #fff;
+    padding-top: 51px;
+}
