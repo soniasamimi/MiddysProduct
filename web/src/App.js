@@ -1,51 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { getProducts, createProduct, updateProduct, deleteProduct } from './services/productService';
-import ProductList from './components/ProductList';
-import ProductForm from './components/ProductForm';
-import NavBar from  './components/NavBar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import ProductsPage from './components/ProductsPage';
+import ServicesPage from './components/ServicesPage';
+import BranchesPage from './components/BranchesPage';
+import NewsPage from './components/NewsPage';
+import OurStoryPage from './components/OurStory';
+import Footer from './components/Footer';
+
 
 const App = () => {
-  const [products, setProducts] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-  const loadProducts = () => {
-    getProducts().then(res => setProducts(res.data)).catch(console.error);
-  };
-
-  useEffect(() => {
-    loadProducts();
-  }, []);
-
-  const handleAddOrUpdate = (data) => {
-    if (selectedProduct) {
-      updateProduct(selectedProduct.id, data).then(loadProducts);
-    } else {
-      createProduct(data).then(loadProducts);
-    }
-  };
-
-  const handleDelete = (id) => {
-    if (window.confirm("Are you sure you want to delete this product?")) {
-      deleteProduct(id).then(loadProducts);
-    }
-  };
-
   return (
-    <div>
-      <NavBar/>
-    <div className="container mt-4">
-       <ProductForm
-        onSubmit={handleAddOrUpdate}
-        selectedProduct={selectedProduct}
-        clearSelection={() => setSelectedProduct(null)}
-      />
-      <ProductList
-        products={products}
-        onEdit={setSelectedProduct}
-        onDelete={handleDelete}
-      />
-    </div>
-    </div>
+    <Router>
+      <div id="root">
+        <NavBar />
+        <div className="app-container container my-4">
+          <Routes>
+            <Route path="/" element={<ProductsPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/branches" element={<BranchesPage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/ourstory" element={<OurStoryPage />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 

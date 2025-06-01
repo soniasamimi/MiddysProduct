@@ -1,6 +1,6 @@
 # Middys Products 
 
-A full-stack web app I built to manage a list of products built with **ASP.NET Core Web API (.NET 8)** and **React**.  
+A full-stack web app to manage a list of products built with **ASP.NET Core Web API (.NET 8)** and **React**.  
 The solution supports full CRUD functionality and is designed with layered architecture principles to ensure scalability and maintainability.
 
 ---

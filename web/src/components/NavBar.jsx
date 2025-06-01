@@ -1,5 +1,6 @@
 import "./NavBar.css";
 import middysLogo from '../assets/middys_logo.png';
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -12,11 +13,11 @@ const NavBar = () => {
 
       <div className="nav-bottom">
         <div className="nav-links">
-          <a href="#">Products</a>
-          <a href="#">Services</a>
-          <a href="#">Branches</a>
-          <a href="#">News & Events</a>
-          <a href="#">Our Story</a>
+          <Link to="/">Products</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/branches">Branches</Link>
+          <Link to="/news">News & Events</Link>
+          <Link to="/ourstory">Our Story</Link>
         </div>
       </div>
     </div>

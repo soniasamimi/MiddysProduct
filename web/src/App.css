@@ -1,36 +1,20 @@
-.App {
-  text-align: center;
+html, body, #root {
+  height: 100%;
+  margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-
-@media screen and (max-width: 1024px), print {
-    .header-bottom {
-        padding: 12px 0;
-    }
-}
-
-@media screen and (max-width: 1099px), print {
-    .header-bottom {
-        padding: 12px 0;
-    }
-}
-
-footer {
-    position: relative;
-    background: #464343;
-    color: #fff;
-    padding-top: 51px;
+.app-container {
+  flex: 1;
 }
